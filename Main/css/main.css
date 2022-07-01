@@ -41,7 +41,7 @@ body {
     margin-right: 50px;
   }
 
-.btn {  
+.btn_press {  
     position: fixed;
     top: 650px;
     left: 900px;
@@ -58,4 +58,10 @@ body {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
     border-radius: 100%;
 
+}
+
+.title{
+  height : 100px;
+  text-align : center;
+  font-size: 50px;
 }

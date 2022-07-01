@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Main/css/main.css">
+    <title>main</title>
+</head>
+<body>
+    <div id="mainbox">
+        <div class="title">
+            <p>Memory</p>
+        </div>
+        <div class="search-bar">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:200px;margin: auto;">
+                <button class="btn btn-outline-success" type="submit"">검색</button>
+            </form>
+        </div>
+        <div class="bookimage">
+            <div class="col mt-4">
+                <img class="imgsz" src="/Main/image/bookexample1.jpeg" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+            </div>
+            <div class="col mt-4">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+            </div>
+            <div class="col mt-4">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(".animated-progress span").each(function () {
+        $(this).animate({
+        width: $(this).attr("data-progress") + "%",},
+        1000);
+        $(this).text($(this).attr("data-progress") + "%");
+        });
+    </script> <!-- animation test-->
+</body>
+</html>
