@@ -1,3 +1,9 @@
+p {
+  text-align: center;
+  font-size: small;
+}
+
+
 .bookimage {
     margin-left: 50px;
     text-align: center;
