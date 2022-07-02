@@ -3,6 +3,9 @@ p {
   font-size: small;
 }
 
+.searchcenter{
+  margin: 0 auto;
+}
 
 .bookimage {
     margin-left: 50px;
