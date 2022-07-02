@@ -8,8 +8,13 @@ p {
 }
 
 .btn2 {
-    border-radius: 25px;
-}
+    border-radius: 0.25rem;
+    background-color: transparent;
+    padding: 0.370rem 0.70rem;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
 
 .book {
     display: block;
