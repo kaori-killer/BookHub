@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/main.css">
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <link rel="stylesheet" href="../css/main.css">
     <title>main</title>
 </head>
 <body>
-    <div id="mainbox">
+    <div id="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../../image/logo.png" style="width:50px; height:50px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">BookHub</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">북리스트</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">북킷리스트</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">통계</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <form class="d-flex">
+                <button class="btn btn-outline-success" type="submit" style="margin-right:20px;">Logout</button>
+            </form>
+        </nav>
+    </div>
+
+    <div id="content">
 
         <div class="animated-progress progress-green">
             <span data-progress="45"></span>
@@ -18,26 +48,38 @@
         <div class="bookimage">
 
             <div class="col mt-4">
-                <img class="imgsz" src="/Main/image/bookexample1.jpeg" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/bookexample1.jpeg" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
             </div>
 
             <div class="col mt-4">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
             </div>
 
             <div class="col mt-4">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
-                <img class="imgsz" src="/Main/image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
+                <img class="imgsz" src="../../image/gray.png" alt="gray">
             </div>
 
-            <button type="button" class="btn btm_image" id="img_btn"><img class="add_image" src="/Main/image/plusbtn.png"></button>
+            <button type="button" class="btn btm_image" id="img_btn"><img class="add_image" src="../../image/plusbtn.png"></button>
         </div>
 
+    </div>
+
+    <div id="footer">
+        <div class="">
+            <div class="container">
+                <p class="lead"><img src="../../image/logo.png" style="width:50px; height:50px"></p>
+                <p>
+                    <br>
+                    ⓒ 2022 Tirrilee Inc.
+                </p>
+            </div>
+        </div>    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
