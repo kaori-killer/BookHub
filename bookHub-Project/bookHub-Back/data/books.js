@@ -46,11 +46,15 @@ export async function create(text, bookname, startDay, endDay) {
   return book;
 }
 
-export async function update(id, text) {
+export async function update(id, text, startDay, endDay) {
   const book = books.find((book) => book.id === id);
+
   if (book) {
     book.text = text;
+    book.startDay = startDay;
+    book.endDay = endDay;
   }
+
   return book;
 }
 
