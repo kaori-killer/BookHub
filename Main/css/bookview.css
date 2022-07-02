@@ -4,6 +4,11 @@ body {
     display: block;
 }
 
+p {
+    text-align: center;
+    font-size: small;
+}
+
 .book {
     display: block;
 }

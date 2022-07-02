@@ -1,4 +1,10 @@
 
+p {
+    text-align: center;
+    font-size: small;
+}
+
+
 #mainbox {
     display: table;
     margin: 0 auto;
@@ -14,7 +20,6 @@
     border-radius: 100%;
     color: white;
     position: relative;
-    font-size: 100px;
 
 }
 
@@ -30,4 +35,19 @@
     border-radius: 100%;
     font-size: 50px;
     color: white;
+}
+
+
+.bigcenter {
+    position: relative;
+    left: 0px;
+    top: 140px;
+    font-size: 150px;
+}
+
+.smallcenter {
+    position: relative;
+    left: 0px;
+    top: 60px;
+    font-size: 50px;
 }
