@@ -3,14 +3,18 @@ let books = [
     id: "1",
     bookname: "world",
     text: "HelloWorld",
+    startDay: "2022.03.22",
+    endDay: "2022.04.22",
     createdAt: Date.now().toString(),
     imgUrl:
       "https://bookthumb-phinf.pstatic.net/cover/026/239/02623907.jpg?udate=20081210",
   },
   {
     id: "2",
-    bookname: "cosmos",
-    text: "HelloWorld season2",
+    bookname: "world",
+    text: "id 2 book",
+    startDay: "2022.03.22",
+    endDay: "2022.04.22",
     createdAt: Date.now().toString(),
     imgUrl:
       "https://bookthumb-phinf.pstatic.net/cover/026/239/02623907.jpg?udate=20081210",
@@ -29,13 +33,14 @@ export async function getById(id) {
   return books.find((book) => book.id === id);
 }
 
-export async function create(text, name, bookname) {
+export async function create(text, bookname, startDay, endDay) {
   const book = {
     id: Date.now().toString(),
-    text,
     createdAt: new Date(),
-    name,
+    text,
     bookname,
+    startDay,
+    endDay,
   };
   books = [book, ...books];
   return book;
