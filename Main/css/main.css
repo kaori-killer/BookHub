@@ -6,11 +6,18 @@ p {
 .btn2 {
   border-radius: 0.25rem;
   background-color: transparent;
-  padding: 0.375rem 0.75rem;
+  padding: 0.370rem 0.70rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .searchcenter{
   margin: 0 auto;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .bookimage {
@@ -66,4 +73,14 @@ p {
     height: 50px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
     border-radius: 100%;
+}
+
+.headertitle{
+  font-size: 100px;
+}
+
+.search-bar {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
