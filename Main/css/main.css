@@ -3,6 +3,12 @@ p {
   font-size: small;
 }
 
+.btn2 {
+  border-radius: 0.25rem;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+}
+
 .searchcenter{
   margin: 0 auto;
 }

@@ -1,5 +1,4 @@
 body {
-    margin-left: 10%;
     display: block;
 }
 
@@ -8,8 +7,13 @@ p {
     font-size: small;
 }
 
+.btn2 {
+    border-radius: 25px;
+}
+
 .book {
     display: block;
+    margin-left: 10%;
 }
 
 .book_info {
@@ -34,6 +38,7 @@ p {
 
 .textarea {
     border-radius: 5px;
+    margin-left: 10%;
     border: 2px solid rgb(213, 194, 194);
     /** outline-color 속성을 추가하면
     focus될 때 테두리 색상을 지정할 수 있다.**/

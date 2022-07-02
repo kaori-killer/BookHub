@@ -74,6 +74,10 @@ p {
     background-color: white;
 }
 
+.btn2 {
+    border-radius: 25px;
+}
+
 a {
     color: rgb(74, 182, 74);
     display: block;
