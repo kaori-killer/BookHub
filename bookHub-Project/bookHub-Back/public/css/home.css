@@ -86,13 +86,15 @@ input::placeholder {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 9px;
-    background-color: white;
+    background-color:  #671212 ;
     border: 1px solid #671212;
-    color: #671212;
+    color: white;
 }
 
 .btn:hover {
-    background-color: #671212;
+    background-color: white;
+    border: 1px solid #671212;
+    color: #671212;
 }
 
 .btn2 {
