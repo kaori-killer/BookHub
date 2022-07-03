@@ -5,6 +5,7 @@ import helmet from "helmet";
 import "express-async-errors";
 import bookRouter from "./router/books.js";
 import authRouter from "./router/auth.js";
+import searchRouter from "./router/search.js";
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(morgan("tiny"));
 
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
+app.use("/search", searchRouter);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
