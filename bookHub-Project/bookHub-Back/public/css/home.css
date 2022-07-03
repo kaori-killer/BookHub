@@ -4,96 +4,112 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    letter-spacing: 1px;
-    background-color: #809A6F;
-}
-
-form {
-    padding-top: 80px;
-}
-
 h1{
-    font-weight: bolder;
     text-align: center;
 }
 
 p {
     text-align: center;
-    font-size: small;
 }
 
+a {
+    color: #671212;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#content {
+    margin: 0 auto;
+    width: 280px;
+}
+
+.login_title {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 80px;
+    height: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #671212;
+}
 
 #main_login, #main_signup {
     margin-top: 10%;
-    width: 500px;
-    height: 600px;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
     border: 1px none black;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
 }
 
-#main_signup {
-    display: block;
-}
-
-#main_login {
-    display: block;
-}
 
 .account {
-    background-color: #ecf0c0;
-    border: none;
-    width: 50%;
-    margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    display: block;
+    box-sizing: border-box;
+    background: #FFFEFE;
+    border: 1px solid #C09D9D;
+    border-radius: 9px;
+    width: 280px;
+    height: 44px;
+    padding-left: 40px;
     margin-top: 10px;
-    font-size: small;
-}
+} 
 
 .account:active, .account:hover {
-    border: black;
+    border: 1px solid black;
 }
 
-.account:hover{
-    background-color: #adce97;
+input[name=usernamelogin]{
+    background-image: url(../img/mail.png);
+    background-repeat:  no-repeat;
+    background-position: 10px center;
+
+}
+
+input[name=password_login]{
+    background-image: url(../img/key.png);
+    background-repeat:  no-repeat;
+    background-position: 10px center;
+}
+
+input::placeholder {
+    color: #671212;
+    font-size: 14px;
 }
 
 .btn {
-    width: 50%;
+    width: 280px;
+    height: 44px;
     margin: 0 auto;
     display: block;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 25px;
+    border-radius: 9px;
     background-color: white;
+    border: 1px solid #671212;
+    color: #671212;
+}
+
+.btn:hover {
+    background-color: #671212;
 }
 
 .btn2 {
     border-radius: 25px;
 }
 
-a {
-    color: rgb(74, 182, 74);
-    display: block;
-    text-decoration: none;
-    text-align: center;
+.createaccount{
+    float: left;
 }
 
 .forgotpassword_login {
-    position: relative;
-    top: 159px;
-    color: rgb(200, 200, 200);
+    color: #8E8E8E;
+    float: right;
 }
 
-.forgotpassword_sign {
-    position: relative;
-    top: 80px;
-    color: rgb(200, 200, 200);
+.wrap {
+    overflow: hidden;
 }
+
 
