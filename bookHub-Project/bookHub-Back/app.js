@@ -15,9 +15,6 @@ app.use(morgan("tiny"));
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
 
-require('./routes/auth')(app);
-require('./routes/books')(app);
-
 app.use((req, res, next) => {
   res.sendStatus(404);
 });
@@ -27,5 +24,3 @@ app.use((error, req, res, next) => {
   res.sendStatus(500);
 });
 app.listen(8080);
-
-require('./routes/route')(app);
