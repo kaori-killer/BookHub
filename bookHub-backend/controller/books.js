@@ -1,6 +1,5 @@
+import request from "request";
 import * as bookRepository from "../data/books.js";
-
-const request = require("request");
 
 const client_id = "E_7i0KfAYDXbZGXED7wh";
 const client_secret = "I73xFgMJIc";
