@@ -17,7 +17,9 @@ router.post("/", bookController.createBook);
 // PUT/ books/:id
 router.put("/:id", bookController.updateBook);
 
-// DELETE/tweets/:id
+// DELETE/books/:id
 router.delete("/:id", bookController.deleteBook);
+
+// Search/books/search?bookname={bookname}
 
 export default router;

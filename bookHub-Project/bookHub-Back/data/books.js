@@ -33,7 +33,7 @@ export async function getById(id) {
   return books.find((book) => book.id === id);
 }
 
-export async function create(text, bookname, startDay, endDay) {
+export async function create(text, bookname, startDay, endDay, title, imgUrl) {
   const book = {
     id: Date.now().toString(),
     createdAt: new Date(),
@@ -41,6 +41,8 @@ export async function create(text, bookname, startDay, endDay) {
     bookname,
     startDay,
     endDay,
+    title,
+    imgUrl,
   };
   books = [book, ...books];
   return book;
