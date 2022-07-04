@@ -1,4 +1,3 @@
-import axios from './axios.js';
 
 let gosignup = document.getElementById("go-signup");
 
