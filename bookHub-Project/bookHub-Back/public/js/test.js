@@ -1,7 +1,8 @@
 
+const SERVER_URL = "http://localhost:8080"
 
 window.onload = ()=>{
-    axios.post('/auth/sibal')
+    axios.post(SERVER_URL + '/auth/me')
     .then((response)=>{
         alert(response.data);
     })

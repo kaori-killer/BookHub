@@ -13,7 +13,7 @@ let loginPost = () => {
     let id = userid.value;
     let pw = userPassword.value;
 
-    axios.post(SERVER_URL + "/auth/login",{"id":id, "password":pw})
+    axios.post(SERVER_URL + "/auth/login",{"username":id, "password":pw})
         .then((response)=>{
             console.log(response);
             alert(response.data);
