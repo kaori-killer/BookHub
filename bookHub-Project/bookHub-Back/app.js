@@ -23,6 +23,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(helmet());
+// app.use(helmet.contentSecurityPolicy({
+//   directives: {
+//     // defaultSrc: ["'self'", 'data:', 'blob:'],
+//
+//     // fontSrc: ["'self'", 'https:', 'data:'],
+//
+//     scriptSrc: ["'self'", 'unsafe-inline'],
+//
+//     // scriptSrc: ["'self'", 'https://*.cloudflare.com'],
+//
+//     // scriptSrcElem: ["'self'",'https:', 'https://*.cloudflare.com'],
+//
+//     // styleSrc: ["'self'", 'https:', 'unsafe-inline'],
+//
+//     // connectSrc: ["'self'", 'data', 'https://*.cloudflare.com']
+//   },
+// }))
+
 app.use(cors());
 app.use(morgan("tiny"));
 

@@ -1,4 +1,4 @@
-// import axios from '../../axios';
+import axios from './axios.js';
 
 let gosignup = document.getElementById("go-signup");
 
@@ -7,7 +7,7 @@ const SERVER_URL = "http://localhost:8080"
 
 //id, password 보내는 함수
 let loginPost = () => {
-    let axios = require('axios');
+    // let axios = require('axios');
     let userid = document.getElementById("username_login");
     let userPassword = document.getElementById("password_login");
 
@@ -34,7 +34,7 @@ let loginPost = () => {
 window.onload = () => {
     let loginbtn = document.getElementById("login-btn");
     //login 버튼을 눌렀을 시 loginPost 함수 실행
-    loginbtn.addEventListener("onClick", loginPost);
+    loginbtn.addEventListener("click", loginPost);
     // gosignup.addEventListener("click", Gosign);
 }
 
