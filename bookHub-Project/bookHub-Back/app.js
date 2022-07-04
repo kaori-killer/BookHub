@@ -7,12 +7,9 @@ import helmet from "helmet";
 import "express-async-errors";
 import bookRouter from "./router/books.js";
 import authRouter from "./router/auth.js";
-<<<<<<< HEAD
 import searchRouter from "./router/search.js";
-=======
 import viewerRouter from "./router/viewer.js";
 import testRouter from "./router/test.js";
->>>>>>> f272544165c38d4b97a33bc8caee9f094d54f08e
 
 const app = express();
 const __dirname = path.resolve();
@@ -51,13 +48,9 @@ app.use(morgan("tiny"));
 
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
-<<<<<<< HEAD
 app.use("/search", searchRouter);
-=======
 app.use("/", viewerRouter);
 app.use("/", testRouter);
-
->>>>>>> f272544165c38d4b97a33bc8caee9f094d54f08e
 
 app.use((req, res, next) => {
   res.sendStatus(404);
