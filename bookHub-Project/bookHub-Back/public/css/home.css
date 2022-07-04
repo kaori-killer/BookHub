@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #671212;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#content {
+    margin: 0 auto;
+    width: 280px;
+}
+
+.login_title {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 80px;
+    height: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #671212;
+}
+
+#main_login, #main_signup {
+    margin-top: 10%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: 1px none black;
+}
+
+
+.account {
+    box-sizing: border-box;
+    background: #FFFEFE;
+    border: 1px solid #C09D9D;
+    border-radius: 9px;
+    width: 280px;
+    height: 44px;
+    padding-left: 40px;
+    margin-top: 10px;
+} 
+
+.account:active, .account:hover {
+    border: 1px solid black;
+}
+
+input[name=usernamelogin]{
+    background-image: url(../img/mail.png);
+    background-repeat:  no-repeat;
+    background-position: 10px center;
+
+}
+
+input[name=password_login]{
+    background-image: url(../img/key.png);
+    background-repeat:  no-repeat;
+    background-position: 10px center;
+}
+
+input::placeholder {
+    color: #671212;
+    font-size: 14px;
+}
+
+.btn {
+    width: 280px;
+    height: 44px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    background-color:  #671212 ;
+    border: 1px solid #671212;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    border: 1px solid #671212;
+    color: #671212;
+}
+
+.btn2 {
+    border-radius: 25px;
+}
+
+.createaccount{
+    float: left;
+}
+
+.forgotpassword_login {
+    color: #8E8E8E;
+    float: right;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+
