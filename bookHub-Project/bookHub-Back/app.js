@@ -7,6 +7,7 @@ import helmet from "helmet";
 import "express-async-errors";
 import bookRouter from "./router/books.js";
 import authRouter from "./router/auth.js";
+import searchRouter from "./router/search.js";
 import viewerRouter from "./router/viewer.js";
 import testRouter from "./router/test.js";
 
@@ -47,9 +48,9 @@ app.use(morgan("tiny"));
 
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
+app.use("/search", searchRouter);
 app.use("/", viewerRouter);
 app.use("/", testRouter);
-
 
 app.use((req, res, next) => {
   res.sendStatus(404);
