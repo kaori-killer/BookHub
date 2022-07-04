@@ -32,9 +32,6 @@ const validateSignup = [
 router.post("/signup", validateSignup, authContller.signup);
 router.post("/login", validateCredential, authContller.login);
 router.get("/me", isAuth, authContller.me);
-router.post('/sibal',(req,res)=>{
-  res.send(200,"Hi");
-});
 // 로그인 전송
 // let auth = (app)=>{
 //   app.get("/login",(req, res)=>{
