@@ -19,16 +19,9 @@ let login = () => {
             "password":pw
         })
         .then((response)=>{
-            console.log(response);
-
-            let token = response.data["token"]
-            localStorage.setItem("token", "bearer " + token)
-
-            // redirect to main page
-            location.href="/"
+            saveToken(response.data["token"])
         })
         .catch((error)=>{
-            console.log(error);
             alert(error.response.data["message"])
         });
 }
@@ -50,18 +43,11 @@ let signUp = () => {
                 "url": null
             })
             .then((response)=>{
-                console.log(response);
-
                 if(response.status === 201) { // 회원가입 성공
-                    let token = response.data["token"] // 토큰 저장(로그인 상태)
-                    localStorage.setItem("token", "bearer " + token)
-
-                    // redirect to main page
-                    location.href="/"
+                    saveToken(response.data["token"])
                 }
             })
             .catch((error)=>{
-                console.log(error);
                 alert(error.response.data["message"])
             });
     } else {
@@ -69,12 +55,22 @@ let signUp = () => {
     }
 }
 
-//signup a태그를 누를시 signup.html로 이동
-// let Gosign = (app) => {
-//     app.get("/", (req, res) => {
-//         res.render("signup.html");
-//     });
-// }
+let getInfo = () => {
+    axios.get(SERVER_URL + "/auth/me", {
+        headers: {
+            "Authorization": localStorage.getItem("token"),
+            "Content-Type": "application/json"
+        }
+    }).then((response) => {
+        console.log(response)
+        if(response.status === 200) {
+
+        }
+    }).catch((error) => {
+        console.log(error)
+        console.log(error.response)
+    });
+}
 
 window.onload = () => {
     let loginBtn = document.getElementById("login-btn");
@@ -88,4 +84,10 @@ window.onload = () => {
         signUpBtn.addEventListener("click", signUp);
 }
 
-// module.exports = Gosign;
+// 토큰 저장(로그인 상태)
+function saveToken(token) {
+    localStorage.setItem("token", "Bearer " + token)
+
+    // redirect to main page
+    location.href="/"
+}

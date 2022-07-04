@@ -47,8 +47,8 @@ app.use(morgan("tiny"));
 
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
-app.use("/", viewerRouter);
 app.use("/test", testRouter);
+app.use("/", viewerRouter);
 
 
 app.use((req, res, next) => {
