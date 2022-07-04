@@ -1,6 +1,38 @@
-p {
-  text-align: center;
-  font-size: small;
+.nav {
+  width: 1400px;
+  margin: auto;
+}
+
+#logo{
+  width: 220px;
+  height: 40px;
+  margin: 30px 30px 30px 50px;
+  float: left;
+}
+
+.nav-logo {
+  width: 30px;
+  height: 35px;
+}
+
+#navbarNav{
+  display : flex;
+  justify-content : center;
+}
+
+.hr-div{
+  width: 1400px;
+  height: 1px;
+  border: 1px solid #E1E1E1;
+  margin: auto;
+}
+
+.headertitle{
+  text-align: center; 
+  font-size: 24px;
+  margin: 30px;
+  color: #671212;
+  font-weight: 700;
 }
 
 .btn2 {
@@ -29,9 +61,9 @@ p {
     width: 500px;
     height: 30px;
     border-radius: 5px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
     margin: 0 auto;
-    border: 1px solid rgba(128, 128, 128, 0.377);
+    border: none;
+    background: linear-gradient(90deg, rgba(120, 78, 78, 0.2) 10.33%, rgba(103, 18, 18, 0.2) 101.49%);
     overflow: hidden;
     position: relative;
   }
@@ -40,7 +72,7 @@ p {
     height: 100%;
     display: block;
     width: 0;
-    color: rgb(255, 251, 251);
+    border-radius: 4px;
     line-height: 30px;
     position: absolute;
     text-align: end;
@@ -48,7 +80,7 @@ p {
   }
   
   .progress-green span {
-    background-color: green;
+    background-color: #671212;
   }
 
   .imgsz {
@@ -80,10 +112,6 @@ p {
     height: 50px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
     border-radius: 100%;
-}
-
-.headertitle{
-  font-size: 100px;
 }
 
 .search-bar {

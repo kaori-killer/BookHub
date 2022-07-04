@@ -30,6 +30,7 @@ const client_secret = "I73xFgMJIc";
 // }
 
 export async function getBooks(req, res) {
+  console.log("Hello");
   const bookname = req.query.bookname;
   const data = await (bookname
     ? bookRepository.getAllByBookname(bookname)
