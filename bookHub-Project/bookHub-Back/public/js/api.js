@@ -16,7 +16,9 @@ let loginPost = () => {
     axios.post(SERVER_URL + "/auth/login",{"username":id, "password":pw})
         .then((response)=>{
             console.log(response);
-            alert(response.data);
+
+            let token = response.data["token"]
+            localStorage.setItem("token", "bearer " + token)
         })
         .catch((error)=>{
             console.log(error);
