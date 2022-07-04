@@ -11,12 +11,10 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/login", function (req, res, next) {
-    // res.setHeader('Content-Security-Policy', "script-src https://unpkg.com/");
     res.render('login')
 });
 
 router.get("/signup", function (req, res, next) {
-    // res.setHeader('Content-Security-Policy', "script-src https://unpkg.com/");
     res.render('signup')
 });
 

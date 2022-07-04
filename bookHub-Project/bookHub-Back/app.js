@@ -14,10 +14,7 @@ import testRouter from "./router/test.js";
 const app = express();
 const __dirname = path.resolve();
 
-// var path = require('path');
-
 app.set('views', path.join(__dirname, 'public/views'));
-// app.set('views', __dirname + "/views")
 app.set('view engine', 'html');
 app.engine('html', ejs.renderFile);
 

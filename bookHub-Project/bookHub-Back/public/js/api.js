@@ -6,17 +6,13 @@ const SERVER_URL = "http://localhost:8080"
 
 //id, password 보내는 함수
 let login = () => {
-    // let axios = require('axios');
-    let userid = document.getElementById("username_login");
-    let userPassword = document.getElementById("password_login");
-
-    let id = userid.value;
-    let pw = userPassword.value;
+    let userId = document.getElementById("username_login").value;
+    let password = document.getElementById("password_login").value;
 
     axios.post(SERVER_URL + "/auth/login",
         {
-            "username":id,
-            "password":pw
+            "username":userId,
+            "password":password
         })
         .then((response)=>{
             saveToken(response.data["token"])
