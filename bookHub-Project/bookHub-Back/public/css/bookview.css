@@ -1,7 +1,3 @@
-body {
-    display: block;
-}
-
 p {
     text-align: center;
     font-size: small;
@@ -12,19 +8,17 @@ p {
   font-size: small;
 }
 
-
 .nav {
-    width: 1400px;
-    margin: auto;
-  }
-  
-  #logo{
-    width: 220px;
-    height: 40px;
-    margin: 30px 30px 30px 50px;
-    float: left;
-  }
-  
+  width: 1400px;
+  margin: auto;
+}
+
+#logo{
+  width: 220px;
+  height: 40px;
+  margin: 30px 30px 30px 50px;
+  float: left;
+}
   
 .container-fluid {
   width: 1200px;
@@ -43,74 +37,130 @@ height: 35px;
   text-align: center;
 }
   
-  #navbarNav{
-    display : flex;
-    justify-content : center;
-  }
+#navbarNav{
+  display : flex;
+  justify-content : center;
+}
   
-  .hr-div{
-    width: 1400px;
-    height: 1px;
-    border: 1px solid #E1E1E1;
-    margin: auto;
-  }
+.hr-div{
+  width: 1400px;
+  height: 1px;
+  border: 1px solid #E1E1E1;
+  margin: auto;
+}
 
+.headertitle{
+  text-align: center; 
+  font-size: 30px;
+  color: #671212;
+  font-weight: 700;
+}
 
-.btn2 {
-    border-radius: 0.25rem;
-    background-color: transparent;
-    padding: 0.370rem 0.70rem;
-    font-weight: 400;
-    line-height: 1.5;
-    font-size: 1rem;
-  }
-
-.book {
-    display: block;
-    margin-left: 10%;
+.littletitle{
+  line-height: 1px;
+  text-align: center; 
+  color: #8E8E8E;
+  font-size: 12px;
 }
 
 .book_info {
-    display: block;
+  margin: 0 auto;
+  text-align: center;
+  word-break:break-all;
+  height: 270px;
+}
+
+.bookimg {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
 }
 
 .book_img {
-    display: inline-block;
-    width: 150px;
-    height: 200px;
+  width: 150px;
+  height: 205px;
 }
 
+.booktitle{
+  font-size: 30px;
+  color: #671212;
+  font-weight: 700;
+  float: left;
+  border-bottom: #671212;
+}
+
+
 .book_specific {
-    vertical-align: top;
-    display: inline-block;
+  display: inline-block;
+  width: 770px;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.date {
+  float: right;
+}
+
+.startday, .endday {
+  display: inline-block;
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  border: 1px solid #C09D9D;
+  border-radius: 12px;
+  color: #671212;
+}
+
+.startday {
+  background-image: url(../img/calendar_today.png);
+  background-repeat:  no-repeat;
+  background-position: 10px center;
+}
+
+.endday {
+  background-image: url(../img/event_available.png);
+  background-repeat:  no-repeat;
+  background-position: 10px center;
 }
 
 .book_buttons {
-    margin: 10px;
     display: flex;
+    float: right;
 }
 
 .textarea {
     border-radius: 5px;
-    margin-left: 10%;
     border: 2px solid rgb(213, 194, 194);
     /** outline-color 속성을 추가하면
     focus될 때 테두리 색상을 지정할 수 있다.**/
     outline-color: #FE6B8B;
 }
 
-.button {
-    margin: 5px;
-    border-radius: 5px;
-    border: 0px solid;
-    color: white;
-    background-color: #595959;
+.button1 {
+  margin-right: 5px;
+  border-radius: 12px;
+  border: 1px solid #E1E1E1;
+  color: black;
+  background-color: white;
+  align-items : center;
+  text-align: center;
+  vertical-align: center;
+  padding: 8px 10px 8px 10px;
+  width: 70px;
+}
 
-    align-items : center;
-    text-align: center;
-    vertical-align: center;
-
-
-    width: 50px;
-    height: 30px;
+.button2 {
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background-color: #671212;
+  align-items : center;
+  text-align: center;
+  vertical-align: center;
+  padding: 8px 10px 8px 10px;
+  width: 70px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
