@@ -16,7 +16,7 @@
     <div class="nav">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="../img/logo.png" id="logo"></a>
+                <a class="nav-link" href="../views/main.html"><img src="../img/logo.png" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,19 +68,18 @@
             <a type="button" class="btn btm_image" id="img_btn"><img class="add_image" id="btn-submit" src="../img/Button.png"></a>
         </div>
     </div>
-    <div class="search-bar" id="search-bar" style="width:50%;display:none">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">책 제목을 찾아주세요</a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn-outline-success" type="submit" style="width: 100px;">확인</button>
+
+    <div class="search-bar" id="search-bar" style="display:none">
+            <div class="container-fluid mb-5">
+                <form class="searchform">
+                    <input class="inline search form-control" name="search" type="search" placeholder="찾고 싶은 책을 검색하세요" aria-label="Search">
+                    <button class="inline btn2 btn-outline-success" type="submit">검색</button>
                 </form>    
             </div>
-        </nav>
     </div>
     <script src="/js/test.js"></script>
     <script src="/js/jquery.js"></script>
+    <script src="../js/searchbar.js"></script>
     <!-- 아래 코드처럼 전역변수 때려서 만드는거 CPS 에러남 하지마셈-->
     <!-- <script>
         document.getElementById("btn-submit").addEventListener("click", searchBook);

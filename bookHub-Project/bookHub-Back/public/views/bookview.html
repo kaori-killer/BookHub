@@ -10,7 +10,7 @@
     <div class="nav">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="../img/logo.png" id="logo"></a>
+                <a class="navbar-brand" href="../views/Main.html"><img src="../img/logo.png" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,21 +35,34 @@
     </div>
     <div class="hr-div"></div>
 
-    <div class="book mt-3">
-        <div class="book_info">
-            <img src="../img/XL.jfif" class="book_img"/>
-            <div class="book_specific">
-                <h1>책 제목</h1>
-                <p>시작일: asdf<br/>완독일: asdf</p>
-                <div class="book_buttons">
-                    <button class="button">수정</button>
-                    <button class="button">삭제</button>
-                    <button class="button">저장</button>
+    <div class="title">
+        <p class="mt-4 headertitle">ADD BOOK</p>
+        <p class="mb-5 littletitle">책 추가하기</p>
+    </div>
+
+    <div class="book_info">
+        <div class="bookimg">
+            <img class="book_img" src="../img/XL.jfif"/>
+        </div>
+        
+        <div class="book_specific wrap">
+            <div class="wrap">
+                <h1 class="booktitle">책 제목</h1>
+                <div class="date">
+                    <p class="startday">2022.07.03</p>
+                    <span style="color: #8E8E8E; width: 8px; font-weight: 500; font-size: 15px; line-height: 34px;"> > </span>
+                    <p class="endday">2022.07.30</p>
                 </div>
+            </div>
+            <textarea class="textarea" cols="100" rows="6" placeholder="내용을 입력해주세요"></textarea>
+
+            <div class="book_buttons mt-3">
+                <button class="button1">수정</button>
+                <button class="button1">삭제</button>
+                <button class="button2">저장</button>
             </div>
         </div>
     </div>
-    <textarea class="textarea" cols="150" rows="50" placeholder="내용을 입력해주세요"></textarea>
 
 </body>
 </html>
