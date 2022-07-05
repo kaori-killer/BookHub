@@ -1,12 +1,51 @@
 import * as bookRepository from "../data/books.js";
 
 export async function getBooks(req, res) {
-  console.log("Hello");
   const bookname = req.query.bookname;
+	// 페이지 크기
+	var countPerPage = 9;
+	// 페이지 번호
+	var pageNo = req.query.pageno;
+	
   const data = await (bookname
     ? bookRepository.getAllByBookname(bookname)
     : bookRepository.getAll());
-  res.status(200).json(data);
+
+	if (countPerPage == undefined || typeof countPerPage == "undefined" || countPerPage == null) {
+		countPerPage = 10;
+	} else {
+		countPerPage = parseInt(countPerPage);
+	}
+	if (pageNo == undefined || typeof pageNo == "undefined" || pageNo == null) {
+		pageNo = 0;
+	} else {
+		pageNo = parseInt(pageNo);
+	}
+	
+	if (pageNo > 0) {
+		// 전체 크기
+		var totalCount = data.length;
+		// 시작 번호
+		var startItemNo = ((pageNo - 1) * countPerPage);
+		// 종료 번호
+		var endItemNo = (pageNo * countPerPage) - 1;
+		// 종료 번호가 전체 크기보다 크면 전체 크기로 변경
+		if (endItemNo > (totalCount - 1)) {
+			endItemNo = totalCount - 1;
+		}
+
+    var bookPageList = [];
+		if (startItemNo < totalCount) {
+			for (var index = startItemNo; index <= endItemNo; index++) {
+				bookPageList.push(data[index]);
+			}
+		}
+
+		res.status(200).json({ totalCnt: data.length, totalPage: Math.ceil(data.length / countPerPage), data: bookPageList });
+	} else {
+    console.log(data.length)
+		res.status(200).json(data);
+	}
 }
 
 export async function getById(req, res) {
