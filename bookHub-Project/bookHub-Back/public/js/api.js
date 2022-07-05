@@ -1,5 +1,7 @@
+// import axios from "axios";
+// import { async } from './../../data/wish';
 
-let gosignup = document.getElementById("go-signup");
+// let gosignup = document.getElementById("go-signup");
 
 
 const SERVER_URL = "http://localhost:8080"
@@ -27,7 +29,7 @@ let signUp = () => {
     let password = document.getElementById("password_signup").value
     let passwordCheck = document.getElementById("password_check_signup").value
     let nickname = document.getElementById("nickname_signup").value
-    let email = document.getElementById("email_signup").value
+    // let email = document.getElementById("email_signup").value
 
     if(password === passwordCheck) {
         axios.post(SERVER_URL + "/auth/signup",
@@ -35,7 +37,7 @@ let signUp = () => {
                 "username": userId,
                 "password": password,
                 "name": nickname,
-                "email": email,
+                "email": "asdf@asdf.com",
                 "url": null
             })
             .then((response)=>{
@@ -68,9 +70,30 @@ let getInfo = () => {
     });
 }
 
+let search = () => {
+    let search = document.getElementById("book_search_input").value
+
+    console.log("search" + (search != null))
+
+    axios.get(SERVER_URL + "/search?bookname=" + search).then((response) => { 
+        console.log(response)
+
+        let bookInfo = response.data["items"][0]
+        console.log(bookInfo)
+
+        localStorage.setItem("bookInfo_title", bookInfo["title"])
+        localStorage.setItem("bookInfo_image", bookInfo["image"])
+        location.href="/bookview"
+    }).catch((error) => {
+        console.log(error)
+        console.log(error.response)
+    })
+}
+
 window.onload = () => {
     let loginBtn = document.getElementById("login-btn");
     let signUpBtn = document.getElementById("signup-btn");
+    let searchBtn = document.getElementById("book_search_btn");
 
     //login 버튼을 눌렀을 시 login 함수 실행
     if(loginBtn != null)
@@ -78,6 +101,25 @@ window.onload = () => {
 
     if(signUpBtn != null)
         signUpBtn.addEventListener("click", signUp);
+
+    if(searchBtn != null)
+        searchBtn.addEventListener("click", search);
+
+    let bookTitle_bookView = document.getElementById("booktitle")
+    let bookImage_bookView = document.getElementById("bookimage")
+    let bookInfo_title = localStorage.getItem("bookInfo_title")
+    let bookInfo_image = localStorage.getItem("bookInfo_image")
+
+    if(bookTitle_bookView != null) {
+        if(bookImage_bookView != null) {
+            if(bookInfo_title != null && bookInfo_image != null) {
+                console.log(bookInfo_title)
+                console.log(bookInfo_image)
+                bookTitle_bookView.innerHTML = bookInfo_title
+                bookImage_bookView.src = bookInfo_image
+            }
+        }
+    }
 }
 
 // 토큰 저장(로그인 상태)
@@ -85,5 +127,5 @@ function saveToken(token) {
     localStorage.setItem("token", "Bearer " + token)
 
     // redirect to main page
-    location.href="/"
+    location.href="/main"
 }
