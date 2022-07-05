@@ -114,6 +114,7 @@ input[name=search]{
 .bookimage {
     margin-left: 50px;
     text-align: center;
+    height: 750px;
 }
 
 .animated-progress {
@@ -172,3 +173,4 @@ input[name=search]{
 .add_image {
     border-radius: 100%;
 }
+
