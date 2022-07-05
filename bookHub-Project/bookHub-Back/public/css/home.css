@@ -19,6 +19,48 @@ a {
     line-height: 18px;
 }
 
+.nav {
+    width: 1400px;
+    margin: auto;
+  }
+  
+#logo{
+width: 220px;
+height: 40px;
+margin: 30px 30px 30px 50px;
+float: left;
+}
+
+
+.container-fluid {
+    width: 1200px;
+}
+
+.nav-logo {
+width: 30px;
+height: 35px;
+}
+
+.nav-item {
+    padding-right: 100px;
+}
+
+.nav-item > a, .nav-item > span{
+    text-align: center;
+}
+
+#navbarNav{
+display : flex;
+justify-content : center;
+}
+
+.hr-div{
+width: 1400px;
+height: 1px;
+border: 1px solid #E1E1E1;
+margin: auto;
+}
+
 #content {
     margin: 0 auto;
     width: 280px;

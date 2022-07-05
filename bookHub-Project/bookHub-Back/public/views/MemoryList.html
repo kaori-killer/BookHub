@@ -10,43 +10,43 @@
 </head>
 <body>
 
-    <div id="nav">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body>
+    <div class="nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="../img/logo.png" style="width:50px; height:50px"></a>
+                <a class="navbar-brand" href="#"><img src="../img/logo.png" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../views/main.html">BookHub</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../views/MemoryList.html">북리스트</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../views/wishList.html">북킷리스트</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../views/stastics.html" tabindex="-1" aria-disabled="true">통계</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/MemoryList.html"><img src="../img/bookcolor.png" class="nav-logo"></a>
+                            <span>Memory</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/wishList.html"><img src="../img/photo_filter.png" class="nav-logo"></a>
+                            <span>Wish</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/stastics.html" tabindex="-1" aria-disabled="true"><img src="../img/leaderboard.png" class="nav-logo"></a>
+                            <span>ANALYTICS</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <form class="d-flex">
-                <button class="btn2 btn-outline-success" type="submit" style="margin-right:20px;">Logout</button>
-            </form>
         </nav>
     </div>
+    <div class="hr-div"></div>
     
     <div id="mainbox">
         <div class="title">
-            <p class="headertitle">Memory</p>
+            <p class="mt-4 headertitle">MEMORY LIST</p>
+            <p class="mb-5 littletitle">메모리 리스트</p>
         </div>
         <div class="search-bar">
-            <form>
-                <input class="inline searchcenter form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:200px; margin:0 auto;">
+            <form class="searchform">
+                <input class="inline search form-control me-2" name="search" type="search" placeholder="찾고 싶은 책을 검색하세요" aria-label="Search">
                 <button class="inline btn2 btn-outline-success" type="submit">검색</button>
             </form>
         </div>
@@ -69,17 +69,6 @@
         </div>
     </div>
 
-    <div id="footer">
-        <div class="">
-            <div class="container">
-                <p class="lead mt-3"><img src="../img/logo.png" style="width:50px; height:50px"></p>
-                <p>
-                    <br>
-                    ⓒ 2022 Tirrilee Inc.
-                </p>
-            </div>
-        </div>    
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>

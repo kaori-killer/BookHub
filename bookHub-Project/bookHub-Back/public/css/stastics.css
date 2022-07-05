@@ -1,10 +1,11 @@
-body{
-    background-color: #809A6F;
-}
 
 p {
     text-align: center;
     font-size: small;
+}
+
+.container-fluid{
+    width: 100%;
 }
 
 #mainbox {
@@ -12,33 +13,87 @@ p {
     display: table;
 }
 
+.nav {
+    width: 1400px;
+    margin: auto;
+  }
+  
+#logo{
+width: 220px;
+height: 40px;
+margin: 30px 30px 30px 50px;
+float: left;
+}
+
+.container-fluid {
+    width: 1200px;
+}
+
+.nav-logo {
+width: 30px;
+height: 35px;
+}
+
+.nav-item {
+    padding-right: 100px;
+}
+
+.nav-item > a, .nav-item > span{
+    text-align: center;
+}
+
+#navbarNav{
+display : flex;
+justify-content : center;
+}
+
+
+.hr-div{
+width: 1400px;
+height: 1px;
+border: 1px solid #E1E1E1;
+margin: auto;
+}
+
+.headertitle{
+  text-align: center; 
+  font-size: 30px;
+  color: #671212;
+  font-weight: 700;
+}
+
+.littletitle{
+  line-height: 1px;
+  text-align: center; 
+  color: #8E8E8E;
+  font-size: 15px;
+
+}
+
 .bigcircle {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     text-align: center;
     vertical-align: middle;
-    background-color: #90C8AC;
-    border: 20px solid white;
+    background: linear-gradient(56.18deg, #784E4E 17.94%, #671212 106.04%);
+    border: 20px solid  #671212;
     border-radius: 100%;
     color: white;
     position: relative;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
-}
+    box-shadow: 0px 32px 48px rgba(103, 18, 18, 0.32);}
 
 .smallcircle {
-    width: 200px;
-    height: 200px;
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
     text-align: center;
     position: relative;
     left: 350px;
-    top: -180px;
-    background-color: #C4DFAA;
-    border: 15px solid white;
+    top: -160px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 100%;
-    font-size: 50px;
-    color: white;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(158, 196, 154, 0.35);
-
+    
 }
 
 
@@ -46,12 +101,13 @@ p {
     position: relative;
     left: 0px;
     top: 140px;
-    font-size: 150px;
+    font-size: 100px;
+    font-weight: bolder;
 }
 
 .smallcenter {
     position: relative;
     left: 0px;
-    top: 60px;
-    font-size: 50px;
+    top: 50px;
+    font-size: 35px;
 }
