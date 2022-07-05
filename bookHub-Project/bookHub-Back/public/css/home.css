@@ -24,7 +24,7 @@ a {
     width: 280px;
 }
 
-.login_title {
+.login_title, .signup_title {
     margin: 0 auto;
     margin-top: 100px;
     width: 80px;
@@ -34,6 +34,10 @@ a {
     font-size: 24px;
     line-height: 32px;
     color: #671212;
+}
+
+.signup_title {
+    width: 200px;
 }
 
 #main_login, #main_signup {
@@ -59,15 +63,20 @@ a {
     border: 1px solid black;
 }
 
-input[name=usernamelogin]{
+input[name=usernamelogin], input[name=username_signup]{
     background-image: url(../img/mail.png);
     background-repeat:  no-repeat;
     background-position: 10px center;
-
 }
 
-input[name=password_login]{
+input[name=password_login], input[name=password_signup], input[name=password_check_signup]{
     background-image: url(../img/key.png);
+    background-repeat:  no-repeat;
+    background-position: 10px center;
+}
+
+input[name=nickname_signup]{
+    background-image: url(../img/account_circle.png);
     background-repeat:  no-repeat;
     background-position: 10px center;
 }
@@ -105,7 +114,7 @@ input::placeholder {
     float: left;
 }
 
-.forgotpassword_login {
+.forgotpassword {
     color: #8E8E8E;
     float: right;
 }
