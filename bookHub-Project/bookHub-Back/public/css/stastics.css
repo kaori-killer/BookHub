@@ -1,8 +1,7 @@
-
-p {
+.nav-p {
     text-align: center;
     font-size: small;
-}
+  }
 
 .container-fluid{
     width: 100%;

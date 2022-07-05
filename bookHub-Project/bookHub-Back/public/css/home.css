@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-*{
-    font-family: 'Poppins', sans-serif;
-}
 
 h1{
     text-align: center;
 }
 
+.nav-p {
+    text-align: center;
+    font-size: small;
+  }
+
+
 p {
     text-align: center;
 }
 
-a {
+.wrap > a {
     color: #671212;
     font-weight: 500;
     font-size: 12px;
@@ -30,7 +31,6 @@ height: 40px;
 margin: 30px 30px 30px 50px;
 float: left;
 }
-
 
 .container-fluid {
     width: 1200px;

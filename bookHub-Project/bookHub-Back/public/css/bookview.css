@@ -7,6 +7,12 @@ p {
     font-size: small;
 }
 
+.nav-p {
+  text-align: center;
+  font-size: small;
+}
+
+
 .nav {
     width: 1400px;
     margin: auto;
