@@ -3,6 +3,7 @@ let books = [
     id: "1",
     bookname: "world",
     text: "HelloWorld",
+    isComplete: false,
     startDay: "2022.03.22",
     endDay: "2022.04.22",
     createdAt: Date.now().toString(),
@@ -13,6 +14,7 @@ let books = [
     id: "2",
     bookname: "world",
     text: "id 2 book",
+    isComplete: false,
     startDay: "2022.03.22",
     endDay: "2022.04.22",
     createdAt: Date.now().toString(),
@@ -22,6 +24,15 @@ let books = [
 ];
 
 export async function getAll() {
+  // 현재 날짜보다 완독일이 이전이면 완독 체크
+  for (const book of books) {
+    const today = new Date();
+    const endDate = new Date(book.endDay.replace('.', '-'));
+    if (today >= endDate) {
+      book.isComplete = true
+    }
+  }
+  
   return books;
 }
 
@@ -36,6 +47,7 @@ export async function getById(id) {
 export async function create(text, bookname, startDay, endDay, title, imgUrl) {
   const book = {
     id: Date.now().toString(),
+    isComplete: false,
     createdAt: new Date(),
     text,
     bookname,
