@@ -9,7 +9,7 @@ import bookRouter from "./router/books.js";
 import authRouter from "./router/auth.js";
 import searchRouter from "./router/search.js";
 import wishRouter from "./router/wish.js";
-import statisticsRouter from "./router/statistics.js";
+// import statisticsRouter from "./router/statistics.js";
 import viewerRouter from "./router/viewer.js";
 import testRouter from "./router/test.js";
 
@@ -43,7 +43,7 @@ app.use("/books", bookRouter);
 app.use("/auth", authRouter);
 app.use("/search", searchRouter);
 app.use("/wishs", wishRouter);
-app.use("/statistics", statisticsRouter);
+// app.use("/statistics", statisticsRouter);
 app.use("/test", testRouter);
 app.use("/", viewerRouter);
 
