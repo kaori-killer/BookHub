@@ -8,29 +8,27 @@ const jwtExpiresInDays = "2d";
 const bscryptSaltRounds = 10;
 
 export async function signup(req, res) {
-  const { username, password, name, email, url } = req.body;
-  const found = await userRepository.findByUsername(username);
+  const { email, password, nickname } = req.body;
+  const found = await userRepository.findByEmail(email);
 
   if (found) {
-    return res.status(409).json({ message: `${username} already exists` });
+    return res.status(409).json({ message: `${email} already exists` });
   }
 
   const hashed = await bcrypt.hash(password, bscryptSaltRounds);
   const userId = await userRepository.createUser({
-    username,
     password: hashed,
-    name,
+    nickname,
     email,
-    url,
   });
 
   const token = createJwtToken(userId);
-  res.status(201).json({ token, username });
+  res.status(201).json({ token, email });
 }
 
 export async function login(req, res) {
-  const { username, password } = req.body;
-  const user = await userRepository.findByUsername(username);
+  const { email, password } = req.body;
+  const user = await userRepository.findByEmail(email);
   if (!user) {
     return res.status(401).json({ message: "Invalid user or password" });
   }
@@ -40,14 +38,14 @@ export async function login(req, res) {
     return res.status(401).json({ message: "Invalid user or password" });
   }
   const token = createJwtToken(user.id);
-  res.status(200).json({ token, username });
+  res.status(200).json({ token, email });
 }
 
 function createJwtToken(id) {
   return jwt.sign({ id }, jwtSecretkey, { expiresIn: jwtExpiresInDays });
 }
 
-export async function me(req, res, next) {
+export async function me(req, res) {
   const user = await userRepository.findById(req.userId);
   if (!user) {
     return res.status(404).json({ message: "User not found" });
@@ -55,8 +53,7 @@ export async function me(req, res, next) {
 
   res.status(200).json({
     token: req.token,
-    username: user.username,
-    id: user.id,
     email: user.email,
+    id: user.id,
   });
 }
