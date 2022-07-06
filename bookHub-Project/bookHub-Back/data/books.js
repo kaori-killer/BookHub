@@ -27,12 +27,12 @@ export async function getAll() {
   // 현재 날짜보다 완독일이 이전이면 완독 체크
   for (const book of books) {
     const today = new Date();
-    const endDate = new Date(book.endDay.replace(".", "-"));
+    const endDate = new Date(book.endDay.replace('.', '-'));
     if (today >= endDate) {
-      book.isComplete = true;
+      book.isComplete = true
     }
   }
-
+  
   return books;
 }
 
@@ -44,7 +44,7 @@ export async function getById(id) {
   return books.find((book) => book.id === id);
 }
 
-export async function create(text, bookname, startDay, endDay, title, imgUrl) {
+export async function create(text, bookname, startDay, endDay, imgUrl) {
   const book = {
     id: Date.now().toString(),
     isComplete: false,
@@ -53,8 +53,9 @@ export async function create(text, bookname, startDay, endDay, title, imgUrl) {
     bookname,
     startDay,
     endDay,
-    imgUrl,
+    imgUrl
   };
+
   books = [book, ...books];
   return book;
 }
