@@ -1,4 +1,5 @@
 import express from "express";
+// import localStorage from "node-localstorage";
 import "express-async-errors";
 import * as bookController from "../controller/books.js";
 
@@ -16,7 +17,19 @@ router.get("/signup", function (req, res, next) {
     res.render('signup')
 });
 
-router.get("/bookview", function (req, res, next) {
+router.get("/bookview/:id", function (req, res, next) {
+    const id = req.params.id;
+
+
+    // localStorage.setItem("bookInfo_id", id)
+    // localStorage.setItem("bookInfo_new", "edit")
+
+    res.render('bookview')
+});
+
+router.get("/new", function (req, res, next) {
+    // localStorage.setItem("bookInfo_new", "new")
+
     res.render('bookview')
 });
 
