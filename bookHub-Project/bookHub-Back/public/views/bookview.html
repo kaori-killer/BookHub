@@ -53,17 +53,17 @@
             <div class="wrap">
                 <h1 class="booktitle" id="booktitle">책 제목</h1>
                 <div class="date">
-                    <p class="startday">2022.07.03</p>
+                    <input type="text" id="startday" class="startday" placeholder="2022.00.00"/>
                     <span style="color: #8E8E8E; width: 8px; font-weight: 500; font-size: 15px; line-height: 34px;"> > </span>
-                    <p class="endday">2022.07.30</p>
+                    <input type="text" id="endday" class="endday" placeholder="2022.00.00"/>
                 </div>
             </div>
-            <textarea class="textarea" cols="100" rows="6" placeholder="내용을 입력해주세요"></textarea>
+            <textarea id="booksubstance" class="textarea" cols="100" rows="6" placeholder="내용을 입력해주세요"></textarea>
 
             <div class="book_buttons mt-3">
-                <button class="button1">수정</button>
-                <button class="button1">삭제</button>
-                <button class="button2">저장</button>
+                <input type="button" id="change-btn" class="button1" value="수정"/>
+                <input type="button" id="delete-btn" class="button1" value="삭제"/>
+                <input type="button" id="store-btn" class="button2" value="저장"/>
             </div>
         </div>
     </div>

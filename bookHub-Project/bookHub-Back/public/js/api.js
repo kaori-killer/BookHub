@@ -90,10 +90,39 @@ let search = () => {
     })
 }
 
+let recordbook = () => {
+    let textarea = document.getElementById("booksubstance").value;
+    let bookview_booktitle = document.getElementById("booktitle").value;
+    let bookview_startday = document.getElementById("startday").value;
+    let bookview_endday = document.getElementById("endday").value;
+    
+    console.log("textarea" + (textarea != null));
+     
+    axios.post(SERVER_URL + "/books",
+            {
+                "text": textarea,
+                "bookname": bookview_booktitle,
+                "startDay": bookview_startday,
+                "endDay": bookview_endday
+            })
+            .then((response)=>{
+                if(response.status === 201) {
+                    console.log(response)
+                    console.log("booksave success");
+                    location.href="/main"
+                }
+            })
+            .catch((error)=>{
+                console.log(error.response)
+            });
+        
+}
+
 window.onload = () => {
     let loginBtn = document.getElementById("login-btn");
     let signUpBtn = document.getElementById("signup-btn");
     let searchBtn = document.getElementById("book_search_btn");
+    let storeBtn = document.getElementById("store-btn");
 
     //login 버튼을 눌렀을 시 login 함수 실행
     if(loginBtn != null)
@@ -104,6 +133,10 @@ window.onload = () => {
 
     if(searchBtn != null)
         searchBtn.addEventListener("click", search);
+
+    if(storeBtn != null)
+        storeBtn.addEventListener("click", recordbook);
+
 
     let bookTitle_bookView = document.getElementById("booktitle")
     let bookImage_bookView = document.getElementById("bookimage")
