@@ -137,7 +137,6 @@ window.onload = () => {
     if(storeBtn != null)
         storeBtn.addEventListener("click", recordbook);
 
-
     let bookTitle_bookView = document.getElementById("booktitle")
     let bookImage_bookView = document.getElementById("bookimage")
     let bookInfo_title = localStorage.getItem("bookInfo_title")
