@@ -1,3 +1,4 @@
+
 .nav-p {
   text-align: center;
   font-size: small;
@@ -126,12 +127,13 @@ input[name=search]{
     background: linear-gradient(90deg, rgba(120, 78, 78, 0.2) 10.33%, rgba(103, 18, 18, 0.2) 101.49%);
     overflow: hidden;
     position: relative;
+    animation-fill-mode: forwards;
   }
   
   .animated-progress span {
     height: 100%;
     display: block;
-    width: 51%;
+    width: 20%;
     border-radius: 4px;
     line-height: 30px;
     position: absolute;

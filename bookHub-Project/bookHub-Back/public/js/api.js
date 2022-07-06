@@ -159,7 +159,7 @@ let updateAllBooks = () => {
                 // let totalCnt = Math.max(response.data.length, 9)
                 let totalCnt = response.data.length
                 console.log("totalcnt" + totalCnt)
-                
+
                 for(let i = 0; i < totalCnt; i++) {
                     let info = response.data[i]
 
@@ -227,6 +227,27 @@ let updatecnt = () => {
         });
 }
 
+let updateprogress = () => {
+    axios.get(SERVER_URL + "/books")
+        .then((response) => {
+            console.log(response.status)
+            if (response.status === 200) {
+                let totalCnt = response.data.length
+                console.log("totalcnt" + totalCnt)
+                
+                let data = totalCnt / 10 * 100;
+                let progress = document.getElementById("progress-bar")
+                let progresstext = document.getElementById("percent")
+
+                progresstext.innerHTML = data + "%"
+                progress.style.width = data + "%"
+            }
+        })
+        .catch((error) => {
+            console.log(error.response)
+        });
+}
+
 function getIdFromURL() {
 
     let id
@@ -258,6 +279,7 @@ window.onload = () => {
         searchBtn.addEventListener("click", search);
 
         updateAllBooks()
+        updateprogress()
     }
     if (storeBtn != null)
         storeBtn.addEventListener("click", recordbook);
