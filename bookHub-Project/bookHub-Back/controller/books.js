@@ -94,3 +94,11 @@ export async function deleteBook(req, res) {
 
   res.sendStatus(204);
 }
+
+export async function getStatistics(req, res) {
+  const totalCnt = (await bookRepository.getAll()).length
+  const completeCnt = (await bookRepository.countCompleteBook()).length
+  const percentage = parseFloat(((completeCnt/totalCnt)).toFixed(2)) * 100
+
+  res.status(200).json({ totalCnt: totalCnt, completeCnt: completeCnt, percentage: percentage });
+}

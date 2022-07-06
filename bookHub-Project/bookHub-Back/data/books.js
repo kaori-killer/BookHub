@@ -75,3 +75,7 @@ export async function update(id, text, startDay, endDay) {
 export async function remove(id) {
   books = books.filter((book) => book.id !== id);
 }
+
+export async function countCompleteBook() {
+  return books.filter((book) => book.isComplete == true);
+}
