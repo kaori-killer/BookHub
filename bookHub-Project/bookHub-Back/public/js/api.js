@@ -219,7 +219,7 @@ let updatecnt = () => {
                 let totalCnt = response.data.length
                 console.log("totalcnt" + totalCnt)
                 console.log(totalCnt)
-                document.getElementById("readcount").innerHTML = totalCnt + "/10권"
+                document.getElementById("readcount").innerHTML = totalCnt
             }
         })
         .catch((error) => {
