@@ -24,4 +24,16 @@ router.get("/main", function (req, res, next) {
     res.render('main')
 });
 
+router.get("/MemoryList", function (req, res, next) {
+    res.render('MemoryList')
+});
+
+router.get("/wishList", function (req, res, next) {
+    res.render('wishList')
+});
+
+router.get("/stastics", function (req, res, next) {
+    res.render('stastics')
+});
+
 export default router;
