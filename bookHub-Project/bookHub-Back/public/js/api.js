@@ -96,11 +96,11 @@ let recordbook = () => {
 
     if (id === "-1") {
         let textarea = document.getElementById("booksubstance").value;
-        let bookview_booktitle = document.getElementById("booktitle").value;
+        let bookview_booktitle = document.getElementById("booktitle").innerText;
         let bookview_startday = document.getElementById("startday").value;
         let bookview_endday = document.getElementById("endday").value;
 
-        // console.log("textarea" + (textarea != null));
+        console.log("booktitle " + bookview_booktitle);
 
         axios.post(SERVER_URL + "/books",
             {
@@ -134,7 +134,7 @@ let recordbook = () => {
                 if (response.status === 200) {
                     console.log(response)
                     console.log("bookedit success");
-                    location.href = "/main"
+                    // location.href = "/main"
                 } else {
                     console.log("bookedit failed")
                 }
@@ -156,6 +156,7 @@ let updateAllBooks = () => {
             if (response.status === 200) {
                 let totalHTML = ""
 
+                // let totalCnt = Math.max(response.data.length, 9)
                 let totalCnt = response.data.length
                 console.log(totalCnt)
                 for(let i = 0; i < totalCnt; i++) {
@@ -175,9 +176,13 @@ let updateAllBooks = () => {
                     }
                 }
 
-
+                // let estimatedCnt = Math.max(totalCnt, 9)
                 let remainCnt = totalCnt - Math.floor(totalCnt / 3) * 3;
                 let remainCntFinish = Math.ceil(remainCnt / 3) * 3;
+
+                if(totalCnt <= 3) remainCntFinish += 3
+                if(totalCnt <= 6) remainCntFinish += 3
+
                 console.log("reaminCnt " + remainCnt)
                 console.log("reaminCntFinish " + remainCntFinish)
                 for(let i = remainCnt; i < remainCntFinish; i++) {
@@ -254,7 +259,6 @@ window.onload = () => {
             if (bookTitle_bookView != null) {
                 if (bookImage_bookView != null) {
                     if (bookInfo_title != null && bookInfo_image != null) {
-
                         console.log(bookInfo_title)
                         console.log(bookInfo_image)
                         bookTitle_bookView.innerHTML = bookInfo_title
@@ -271,10 +275,13 @@ window.onload = () => {
             axios.get(SERVER_URL + "/books/" + id).then((response) => {
                 let bookname = response.data["bookname"]
                 let text = response.data["text"]
+                let startDay = response.data["startDay"]
+                let endDay = response.data["endDay"]
 
                 document.getElementById("booktitle").innerHTML = bookname
                 document.getElementById("booksubstance").value = text
-
+                document.getElementById("startday").value = startDay
+                document.getElementById("endday").value = endDay
             }).catch((error) => {
                 console.log(error)
             })
