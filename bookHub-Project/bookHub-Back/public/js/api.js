@@ -158,7 +158,8 @@ let updateAllBooks = () => {
 
                 // let totalCnt = Math.max(response.data.length, 9)
                 let totalCnt = response.data.length
-                console.log(totalCnt)
+                console.log("totalcnt" + totalCnt)
+                
                 for(let i = 0; i < totalCnt; i++) {
                     let info = response.data[i]
 
@@ -210,6 +211,22 @@ let updateAllBooks = () => {
         });
 }
 
+let updatecnt = () => {
+    axios.get(SERVER_URL + "/books")
+        .then((response) => {
+            console.log(response.status)
+            if (response.status === 200) {
+                let totalCnt = response.data.length
+                console.log("totalcnt" + totalCnt)
+                console.log(totalCnt)
+                document.getElementById("readcount").innerHTML = totalCnt + "/10권"
+            }
+        })
+        .catch((error) => {
+            console.log(error.response)
+        });
+}
+
 function getIdFromURL() {
 
     let id
@@ -227,6 +244,7 @@ window.onload = () => {
     let signUpBtn = document.getElementById("signup-btn");
     let searchBtn = document.getElementById("book_search_btn");
     let storeBtn = document.getElementById("store-btn");
+    let readcnt = document.getElementById("analytics");
 
     // login 버튼을 눌렀을 시 login 함수 실행
     if (loginBtn != null)
@@ -243,6 +261,9 @@ window.onload = () => {
     }
     if (storeBtn != null)
         storeBtn.addEventListener("click", recordbook);
+
+    if (readcnt != null)
+        updatecnt();
 
     // let id = document.getElementById("bookViewId")
     let id = getIdFromURL()
