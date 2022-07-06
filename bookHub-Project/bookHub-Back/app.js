@@ -12,32 +12,46 @@ import wishRouter from "./router/wish.js";
 import statisticsRouter from "./router/statistics.js";
 import viewerRouter from "./router/viewer.js";
 import testRouter from "./router/test.js";
+import { expressCspHeader, INLINE, NONE, SELF } from "express-csp-header";
 
 const app = express();
 const __dirname = path.resolve();
 
-app.set('views', path.join(__dirname, 'public/views'));
-app.set('view engine', 'html');
-app.engine('html', ejs.renderFile);
+app.set("views", path.join(__dirname, "public/views"));
+app.set("view engine", "html");
+app.engine("html", ejs.renderFile);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(
-	helmet.contentSecurityPolicy({
-		useDefaults: true,
-		directives: {
-			'img-src': ["'self' data:", '*.bookthumb-phinf.pstatic.net']
-		}
-	})
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self' data:", "*.bookthumb-phinf.pstatic.net"],
+    },
+  })
 );
 app.use((req, res, next) => {
-	res.removeHeader("Cross-Origin-Embedder-Policy");
-	next();
+  res.removeHeader("Cross-Origin-Embedder-Policy");
+  next();
 });
+
+app.use(
+  expressCspHeader({
+    directives: {
+      "script-src": [
+        SELF,
+        INLINE,
+        "https://cdnjs.cloudflare.com",
+        "https://unpkg.com",
+      ],
+    },
+  })
+);
 
 app.use("/books", bookRouter);
 app.use("/auth", authRouter);
@@ -57,4 +71,3 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(8080);
-

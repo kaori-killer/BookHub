@@ -20,6 +20,7 @@
     "esm-node": "^1.0.7",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "express-csp-header": "^5.1.0",
     "express-validator": "^6.14.2",
     "got": "^11.8.3",
     "helmet": "^5.1.0",
