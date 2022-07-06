@@ -84,7 +84,7 @@ let search = () => {
         localStorage.setItem("bookInfo_title", bookInfo["title"])
         localStorage.setItem("bookInfo_image", bookInfo["image"])
         localStorage.setItem("bookInfo_new", "new")
-        location.href = "/bookview"
+        location.href = "/new"
     }).catch((error) => {
         console.log(error)
         console.log(error.response)
@@ -92,9 +92,9 @@ let search = () => {
 }
 
 let recordbook = () => {
-    let type = localStorage.getItem("bookInfo_new")
+    let id = getIdFromURL()
 
-    if (type === "new") {
+    if (id === "-1") {
         let textarea = document.getElementById("booksubstance").value;
         let bookview_booktitle = document.getElementById("booktitle").value;
         let bookview_startday = document.getElementById("startday").value;
@@ -119,13 +119,12 @@ let recordbook = () => {
             .catch((error) => {
                 console.log(error.response)
             });
-    } else if(type === "edit") {
-        let id = localStorage.getItem("bookInfo_id");
+    } else  {
         let textarea = document.getElementById("booksubstance").value;
         let bookview_startday = document.getElementById("startday").value;
         let bookview_endday = document.getElementById("endday").value;
 
-        axios.post(SERVER_URL + "/books/" + id,
+        axios.put(SERVER_URL + "/books/" + id,
             {
                 "text": textarea,
                 "startDay": bookview_startday,
@@ -146,39 +145,142 @@ let recordbook = () => {
     }
 }
 
+let updateAllBooks = () => {
+    axios.get(SERVER_URL + "/books")
+        .then((response) => {
+            let bookImages = document.getElementById("bookimage");
+            // let totalCnt = response.data["data"].length
+            console.log(response)
+
+            console.log(response.status)
+            if (response.status === 200) {
+                let totalHTML = ""
+
+                let totalCnt = response.data.length
+                console.log(totalCnt)
+                for(let i = 0; i < totalCnt; i++) {
+                    let info = response.data[i]
+
+                    // open a div
+                    if(i % 3 === 0) {
+                        totalHTML += "<div class=\"col mt-4\">\n"
+                    }
+
+                    // add images
+                    totalHTML += '<a href="/bookview/' + info.id + '"><img class="imgsz" src=' + '"../img/bookexample1.jpeg' + '" alt="gray"></a>';
+
+                    // close a div
+                    if(i % 3 === 2) {
+                        totalHTML += "</div>"
+                    }
+                }
+
+
+                let remainCnt = totalCnt - Math.floor(totalCnt / 3) * 3;
+                let remainCntFinish = Math.ceil(remainCnt / 3) * 3;
+                console.log("reaminCnt " + remainCnt)
+                console.log("reaminCntFinish " + remainCntFinish)
+                for(let i = remainCnt; i < remainCntFinish; i++) {
+                    // open a div
+                    if(i % 3 === 0) {
+                        totalHTML += "<div class=\"col mt-4\">\n"
+                    }
+
+                    // add blank images
+                    totalHTML += '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">';
+                    // close a div
+                    if(i % 3 === 2) {
+                        totalHTML += "</div>"
+                    }
+                }
+
+                console.log(totalHTML)
+                console.log(totalCnt)
+
+                bookImages.innerHTML = totalHTML
+            }
+        })
+        .catch((error) => {
+            console.log(error.response)
+        });
+}
+
+function getIdFromURL() {
+
+    let id
+    if(!location.href.endsWith("new"))
+        id = location.href.substring(location.href.lastIndexOf('/') + 1)
+    else
+        id = "-1"
+
+    console.log("id: " + id)
+    return id
+}
+
 window.onload = () => {
     let loginBtn = document.getElementById("login-btn");
     let signUpBtn = document.getElementById("signup-btn");
     let searchBtn = document.getElementById("book_search_btn");
     let storeBtn = document.getElementById("store-btn");
 
-    //login 버튼을 눌렀을 시 login 함수 실행
+    // login 버튼을 눌렀을 시 login 함수 실행
     if (loginBtn != null)
         loginBtn.addEventListener("click", login);
 
     if (signUpBtn != null)
         signUpBtn.addEventListener("click", signUp);
 
-    if (searchBtn != null)
+    // 찾기버튼 있으면 메인 페이지임
+    if (searchBtn != null) {
         searchBtn.addEventListener("click", search);
 
+        updateAllBooks()
+    }
     if (storeBtn != null)
         storeBtn.addEventListener("click", recordbook);
 
-    let bookTitle_bookView = document.getElementById("booktitle")
-    let bookImage_bookView = document.getElementById("bookimage")
-    let bookInfo_title = localStorage.getItem("bookInfo_title")
-    let bookInfo_image = localStorage.getItem("bookInfo_image")
+    // let id = document.getElementById("bookViewId")
+    let id = getIdFromURL()
 
-    if (bookTitle_bookView != null) {
-        if (bookImage_bookView != null) {
-            if (bookInfo_title != null && bookInfo_image != null) {
-                console.log(bookInfo_title)
-                console.log(bookInfo_image)
-                bookTitle_bookView.innerHTML = bookInfo_title
-                bookImage_bookView.src = bookInfo_image
+    console.log("id: " + id)
+
+    if(id != null) {
+        if (id === "-1") {
+            let bookTitle_bookView = document.getElementById("booktitle")
+            let bookImage_bookView = document.getElementById("bookimage")
+            let bookInfo_title = localStorage.getItem("bookInfo_title")
+            let bookInfo_image = localStorage.getItem("bookInfo_image")
+
+            if (bookTitle_bookView != null) {
+                if (bookImage_bookView != null) {
+                    if (bookInfo_title != null && bookInfo_image != null) {
+
+                        console.log(bookInfo_title)
+                        console.log(bookInfo_image)
+                        bookTitle_bookView.innerHTML = bookInfo_title
+                        bookImage_bookView.src = bookInfo_image
+                    }
+                }
             }
+        } else {
+            // let id = document.getElementById("bookViewId").value
+
+            document.getElementById("textbookadd").innerHTML = "책 수정하기"
+            document.getElementById("textbookaddeng").innerHTML = "EDIT BOOK"
+
+            axios.get(SERVER_URL + "/books/" + id).then((response) => {
+                let bookname = response.data["bookname"]
+                let text = response.data["text"]
+
+                document.getElementById("booktitle").innerHTML = bookname
+                document.getElementById("booksubstance").value = text
+
+            }).catch((error) => {
+                console.log(error)
+            })
         }
+    } else {
+        console.log("id is null")
     }
 }
 
