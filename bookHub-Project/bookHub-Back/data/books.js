@@ -19,7 +19,7 @@ let books = [
     endDay: "2022.04.22",
     createdAt: Date.now().toString(),
     imgUrl:
-      "https://bookthumb-phinf.pstatic.net/cover/026/239/02623907.jpg?udate=20081210",
+      "https://bookthumb-phinf.pstatic.net/cover/157/688/15768835.jpg?type=m1&udate=20211014",
   },
 ];
 
