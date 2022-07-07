@@ -212,7 +212,6 @@ let updateAllBooks = async () => {
                 totalHTML += "</div>";
             }
         }
-
         console.log(totalHTML);
         console.log(totalCnt);
 
@@ -244,11 +243,12 @@ let updateprogress = () => {
                 let totalCnt = response.data.length;
                 console.log("totalcnt" + totalCnt);
 
-                let data = (totalCnt / 10) * 100;
+                let data = (totalCnt / 9) * 100;
+                console.log("data" + data)
                 let progress = document.getElementById("progress-bar");
                 let progresstext = document.getElementById("percent");
 
-                progresstext.innerHTML = data + "%";
+                progresstext.innerHTML = Math.floor(data) + "%";
                 progress.style.width = data + "%";
             }
         })
