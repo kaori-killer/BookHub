@@ -193,7 +193,8 @@ let updateAllBooks = async () => {
         let remainCntFinish = Math.ceil(remainCnt / 3) * 3;
 
         // 최소 9칸 띄우기 보장
-                if(totalCnt <= 3) remainCntFinish += 3;
+        if(totalCnt == 0) remainCntFinish += 3;
+        if(totalCnt <= 3) remainCntFinish += 3;
         if (totalCnt <= 6) remainCntFinish += 3;
 
         console.log("reaminCnt " + remainCnt);
