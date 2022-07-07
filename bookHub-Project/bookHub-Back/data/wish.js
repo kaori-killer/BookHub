@@ -4,7 +4,7 @@ let wishs = [
     bookname: "world",
     createdAt: Date.now().toString(),
     imgUrl:
-      "https://bookthumb-phinf.pstatic.net/cover/026/239/02623907.jpg?udate=20081210",
+      "https://bookthumb-phinf.pstatic.net/cover/157/684/15768427.jpg?type=m1&udate=20200109",
   },
   {
     id: "2",
