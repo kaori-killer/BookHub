@@ -257,6 +257,23 @@ let updateprogress = () => {
         });
 };
 
+let deletebook = () => {
+    let id = getIdFromURL();
+
+    axios.delete(SERVER_URL + "/books/" + id, {
+    })
+        .then((response) => {
+            if (response.status === 204) {
+                console.log(response);
+                console.log("delete book success")
+                location.href = "/main";
+            }
+        })
+        .catch((error) => {
+            console.log(error.response);
+        });
+}
+
 function getIdFromURL() {
     let id;
     if (!location.href.endsWith("new"))
@@ -273,6 +290,7 @@ window.onload = () => {
     let searchBtn = document.getElementById("book_search_btn");
     let storeBtn = document.getElementById("store-btn");
     let readcnt = document.getElementById("analytics");
+    let deleteBtn = document.getElementById("delete-btn");
 
     // login 버튼을 눌렀을 시 login 함수 실행
     if (loginBtn != null) loginBtn.addEventListener("click", login);
@@ -287,6 +305,8 @@ window.onload = () => {
         updateprogress();
     }
     if (storeBtn != null) storeBtn.addEventListener("click", recordbook);
+
+    if (deleteBtn != null) deleteBtn.addEventListener("click", deletebook);
 
     if (readcnt != null) updatecnt();
 
