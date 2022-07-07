@@ -45,8 +45,8 @@ router.get("/wishList", function (req, res, next) {
     res.render('wishList')
 });
 
-router.get("/stastics", function (req, res, next) {
-    res.render('stastics')
+router.get("/stat", function (req, res, next) {
+    res.render('statistics')
 });
 
 export default router;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/stastics.css">
 
     <script src="/js/axios.min.js"></script>
-    <script src="../js/api.js" type="module"></script>
+    <script src="../js/statapi.js" type="module"></script>
     <title>Stastics</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item memory">
-                            <a class="nav-link memorygray" href="/MemoryList"><img src="../img/book.png" class="nav-logo"></a>
+                            <a class="nav-link memorygray" href="/main"><img src="../img/book.png" class="nav-logo"></a>
                             <p class="nav-p">MEMORY</p>
                         </li>
                         <li class="nav-item wish">
@@ -30,7 +30,7 @@
                             <p class="nav-p">Wish</p>
                         </li>
                         <li class="nav-item sta">
-                            <a class="nav-link stangray" id="analytics" href="/stastics" tabindex="-1" aria-disabled="true"><img src="../img/leaderboardcolor.png" class="nav-logo"></a>
+                            <a class="nav-link stangray" id="analytics" href="/stat" tabindex="-1" aria-disabled="true"><img src="../img/leaderboardcolor.png" class="nav-logo"></a>
                             <p class="nav-p">ANALYTICS</p>
                         </li>
                     </ul>
@@ -50,7 +50,9 @@
             <div class="bigcircle1">
                 <div class="mt-5 bigcircle">
                     <p class="bigcenter" id="readcount">2</p>
-                    <p class="goalcnt">/10권</p>
+                    <p class="goalcnt">/</p>
+                    <p class="goalcnt" id="totalcount">10</p>
+                    <p class="goalcnt">권</p>
                 </div>
             </div>
         </div>
