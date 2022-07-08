@@ -78,6 +78,7 @@ window.onload = async () => {
             let remainCntFinish = Math.ceil(remainCnt / 3) * 3;
 
             // 최소 9칸 띄우기 보장
+            if(totalCnt === 0) remainCntFinish += 3;
             if (totalCnt <= 3) remainCntFinish += 3;
             if (totalCnt <= 6) remainCntFinish += 3;
 
@@ -91,7 +92,7 @@ window.onload = async () => {
 
                 // add blank images
                 totalHTML +=
-                    '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">\n';
+                    '<img class="imgsz" src=' + '' + '"../../img/gray.png" alt="gray">\n';
                 // close a div
                 if (i % 3 === 2) {
                     totalHTML += "</div>\n";
