@@ -88,6 +88,9 @@ window.onload = () => {
 
     if (id != null) {
         if (id === "-1") {
+            document.getElementById("textbookadd").innerHTML = "책 추가하기";
+            document.getElementById("textbookaddeng").innerHTML = "ADD BOOK";
+
             let bookTitle_bookView = document.getElementById("booktitle");
             let bookImage_bookView = document.getElementById("bookimage");
             let bookInfo_title = localStorage.getItem("bookInfo_title");
