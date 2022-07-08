@@ -63,13 +63,13 @@ window.onload = async () => {
                     '<img class="imgsz" src="' +
                     info.imgUrl +
                     // '"../img/bookexample1.jpeg' +
-                    '" alt="../img/gray.png"/>' //+
+                    '" alt="../img/gray.png"/>\n' //+
                 // '</a>'
                 ;
 
                 // close a div
                 if (i % 3 === 2) {
-                    totalHTML += "</div>";
+                    totalHTML += "</div>\n";
                 }
             }
 
@@ -91,12 +91,14 @@ window.onload = async () => {
 
                 // add blank images
                 totalHTML +=
-                    '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">';
+                    '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">\n';
                 // close a div
                 if (i % 3 === 2) {
-                    totalHTML += "</div>";
+                    totalHTML += "</div>\n";
                 }
             }
+
+            totalHTML = totalHTML.substring(0, totalHTML.length - 1)
 
             console.log(totalHTML);
             console.log(totalCnt);

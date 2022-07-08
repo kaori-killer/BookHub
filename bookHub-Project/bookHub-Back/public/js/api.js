@@ -180,11 +180,11 @@ let updateAllBooks = async () => {
                 '"><img class="imgsz" src="' +
                 responseBookInfo.data.imgUrl +
                 // '"../img/bookexample1.jpeg' +
-                '" alt="../img/gray.png"/></a>';
+                '" alt="../img/gray.png"/></a>\n';
 
             // close a div
             if (i % 3 === 2) {
-                totalHTML += "</div>";
+                totalHTML += "</div>\n";
             }
         }
 
@@ -207,12 +207,16 @@ let updateAllBooks = async () => {
 
             // add blank images
             totalHTML +=
-                '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">';
+                '<img class="imgsz" src=' + '"../img/gray.png' + '" alt="gray">\n';
             // close a div
             if (i % 3 === 2) {
-                totalHTML += "</div>";
+                totalHTML += "</div>\n";
             }
         }
+
+        // 마지막 \n 제거
+        totalHTML = totalHTML.substring(0, totalHTML.length - 1)
+
         console.log(totalHTML);
         console.log(totalCnt);
 
