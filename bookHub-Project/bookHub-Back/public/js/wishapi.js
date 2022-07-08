@@ -31,15 +31,15 @@ window.onload = async () => {
         let bookImages = document.getElementById("bookimage_wishs");
 
         // let totalCnt = response.data["data"].length
-        console.log(responseBooks);
+        // console.log(responseBooks);
 
-        console.log(responseBooks.status);
+        // console.log(responseBooks.status);
         if (responseBooks.status === 200) {
             let totalHTML = "";
 
             // let totalCnt = Math.max(response.data.length, 9)
             let totalCnt = responseBooks.data.length;
-            console.log("totalcnt" + totalCnt);
+            // console.log("totalcnt" + totalCnt);
 
             for (let i = 0; i < totalCnt; i++) {
                 let info = responseBooks.data[i];
@@ -49,7 +49,7 @@ window.onload = async () => {
                     totalHTML += '<div class="col mt-4">\n';
                 }
 
-                console.log(info)
+                // console.log(info)
 
                 // let responseBookInfo = await axios.get(SERVER_URL + "/search?bookname=" + info.bookname);
                 // console.log(responseBookInfo.data);
@@ -81,8 +81,8 @@ window.onload = async () => {
             if (totalCnt <= 3) remainCntFinish += 3;
             if (totalCnt <= 6) remainCntFinish += 3;
 
-            console.log("reaminCnt " + remainCnt);
-            console.log("reaminCntFinish " + remainCntFinish);
+            // console.log("reaminCnt " + remainCnt);
+            // console.log("reaminCntFinish " + remainCntFinish);
             for (let i = remainCnt; i < remainCntFinish; i++) {
                 // open a div
                 if (i % 3 === 0) {
@@ -100,8 +100,8 @@ window.onload = async () => {
 
             totalHTML = totalHTML.substring(0, totalHTML.length - 1)
 
-            console.log(totalHTML);
-            console.log(totalCnt);
+            // console.log(totalHTML);
+            // console.log(totalCnt);
 
             bookImages.innerHTML = totalHTML;
         }

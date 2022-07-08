@@ -71,14 +71,14 @@ let getInfo = () => {
 let search = () => {
     let search = document.getElementById("book_search_input").value;
 
-    console.log("search" + (search != null));
+    // console.log("search" + (search != null));
 
     axios.get(SERVER_URL + "/search?bookname=" + search)
         .then((response) => {
-            console.log(response);
+            // console.log(response);
 
             let bookInfo = response.data["items"][0];
-            console.log(bookInfo);
+            // console.log(bookInfo);
 
             localStorage.setItem("bookInfo_title", bookInfo["title"]);
             localStorage.setItem("bookInfo_image", bookInfo["image"]);
@@ -113,7 +113,7 @@ let recordbook = () => {
         })
             .then((response) => {
                 if (response.status === 201) {
-                    console.log(response);
+                    // console.log(response);
                     console.log("booksave success");
                     location.href = "/main";
                 }
@@ -133,7 +133,7 @@ let recordbook = () => {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    console.log(response);
+                    // console.log(response);
                     console.log("bookedit success");
                     // location.href = "/main"
                 } else {
@@ -151,34 +151,36 @@ let updateAllBooks = async () => {
     let bookImages = document.getElementById("bookimage");
 
     // let totalCnt = response.data["data"].length
-    console.log(responseBooks);
+    // console.log(responseBooks);
 
-    console.log(responseBooks.status);
+    // console.log(responseBooks.status);
     if (responseBooks.status === 200) {
         let totalHTML = "";
 
         // let totalCnt = Math.max(response.data.length, 9)
         let totalCnt = responseBooks.data.length;
-        console.log("totalcnt" + totalCnt);
+        // console.log("totalcnt" + totalCnt);
 
         for (let i = 0; i < totalCnt; i++) {
             let info = responseBooks.data[i];
+
+            // console.log(info)
 
             // open a div
             if (i % 3 === 0) {
                 totalHTML += '<div class="col mt-4">\n';
             }
 
-            let responseBookInfo = await axios.get(SERVER_URL + "/books/" + info.id);
-            console.log(responseBookInfo.data);
-            console.log(responseBookInfo.data.imgUrl);
+            // let responseBookInfo = await axios.get(SERVER_URL + "/books/" + info.id);
+            // console.log(responseBookInfo.data);
+            // console.log(responseBookInfo.data.imgUrl);
 
             // add images
             totalHTML +=
                 '<a href="/bookview/' +
                 info.id +
                 '"><img class="imgsz" src="' +
-                responseBookInfo.data.imgUrl +
+                info.imgUrl +
                 // '"../img/bookexample1.jpeg' +
                 '" alt="../img/gray.png"/></a>\n';
 
@@ -197,8 +199,8 @@ let updateAllBooks = async () => {
         if(totalCnt <= 3) remainCntFinish += 3;
         if (totalCnt <= 6) remainCntFinish += 3;
 
-        console.log("reaminCnt " + remainCnt);
-        console.log("reaminCntFinish " + remainCntFinish);
+        // console.log("reaminCnt " + remainCnt);
+        // console.log("reaminCntFinish " + remainCntFinish);
         for (let i = remainCnt; i < remainCntFinish; i++) {
             // open a div
             if (i % 3 === 0) {
@@ -217,8 +219,8 @@ let updateAllBooks = async () => {
         // 마지막 \n 제거
         totalHTML = totalHTML.substring(0, totalHTML.length - 1)
 
-        console.log(totalHTML);
-        console.log(totalCnt);
+        // console.log(totalHTML);
+        // console.log(totalCnt);
 
         bookImages.innerHTML = totalHTML;
     }
@@ -230,8 +232,8 @@ let updatecnt = () => {
             console.log(response.status);
             if (response.status === 200) {
                 let totalCnt = response.data.length;
-                console.log("totalcnt" + totalCnt);
-                console.log(totalCnt);
+                // console.log("totalcnt" + totalCnt);
+                // console.log(totalCnt);
                 document.getElementById("readcount").innerHTML = totalCnt;
             }
         })
@@ -243,13 +245,13 @@ let updatecnt = () => {
 let updateprogress = () => {
     axios.get(SERVER_URL + "/books")
         .then((response) => {
-            console.log(response.status);
+            // console.log(response.status);
             if (response.status === 200) {
                 let totalCnt = response.data.length;
-                console.log("totalcnt" + totalCnt);
+                // console.log("totalcnt" + totalCnt);
 
                 let data = (totalCnt / 9) * 100;
-                console.log("data" + data)
+                // console.log("data" + data)
                 let progress = document.getElementById("progress-bar");
                 let progresstext = document.getElementById("percent");
 
@@ -269,7 +271,7 @@ let deletebook = () => {
     })
         .then((response) => {
             if (response.status === 204) {
-                console.log(response);
+                // console.log(response);
                 console.log("delete book success")
                 location.href = "/main";
             }
@@ -285,7 +287,7 @@ function getIdFromURL() {
         id = location.href.substring(location.href.lastIndexOf("/") + 1);
     else id = "-1";
 
-    console.log("id: " + id);
+    // console.log("id: " + id);
     return id;
 }
 
@@ -318,7 +320,7 @@ window.onload = () => {
     // let id = document.getElementById("bookViewId")
     let id = getIdFromURL();
 
-    console.log("id: " + id);
+    // console.log("id: " + id);
 
     if (id != null) {
         if (id === "-1") {
@@ -330,8 +332,8 @@ window.onload = () => {
             if (bookTitle_bookView != null) {
                 if (bookImage_bookView != null) {
                     if (bookInfo_title != null && bookInfo_image != null) {
-                        console.log(bookInfo_title);
-                        console.log(bookInfo_image);
+                        // console.log(bookInfo_title);
+                        // console.log(bookInfo_image);
                         bookTitle_bookView.innerHTML = bookInfo_title;
                         bookImage_bookView.src = bookInfo_image;
                     }
